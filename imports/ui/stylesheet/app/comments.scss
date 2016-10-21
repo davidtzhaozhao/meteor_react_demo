@@ -1,0 +1,133 @@
+//  comments
+//  comment and votechart have same style
+#comment, #voteChart{
+  @include flexbox;
+//  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: scroll;
+  background: rgba(0,0,0,0.5);
+
+  //  define ul css
+  ul{
+   position: relative;
+   width: 50%;
+   height: 100%;
+   overflow: scroll;
+   margin: 1rem auto;
+   padding: 1rem;
+   background: #fff;
+   &::-webkit-scrollbar {
+        width: 0 !important;
+  }
+
+  a:nth-of-type(1) {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+  // click a href go back to post page
+   a:nth-of-type(2) {
+        display: block;
+        position: fixed;
+        top:0;
+        left: 0;
+        width: 25%;
+        height: 100%;
+        cursor: default;
+        @include below(600px) {
+          width: 2%;
+        }
+      }
+      a:nth-of-type(3) {
+        display: block;
+        position: fixed;
+        top:0;
+        right: 0;
+        width: 25%;
+        height: 100%;
+        cursor: default;
+        @include below(600px) {
+          width: 2%;
+        }
+      }
+  @include below(600px) {
+    width: 96%;
+  }
+}
+}
+
+//  define li css
+.comment-item {
+    @include flexbox;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 1px 0;
+    margin-bottom: 1px;
+    text-align:justify;
+    width: 85%;
+    hr {
+      @include flex-order(3);
+    }
+    p {
+      margin: 2px 0;
+      font-size: 0.8rem;
+    }
+
+    //  define first div of li
+    .citem-div1 {
+        width: 10%;
+        img {
+          width: 1.5rem;
+          vertical-align: middle;
+          border: 1px solid $color_rare;
+          @include border-radius(50%);
+        }
+    }
+    .citem-div2 {
+      flex: 1;
+      padding: .1rem;
+      @extend %clearfix;
+    }
+
+}
+
+//  comment target css
+#comment:target {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+  overflow: scroll;
+  transition: opacity 1s, visibility 1s;
+
+}
+#comment:not(:target) {
+  opacity:0;
+  visibility: hidden;
+  transition: opacity 1s, visibility 1s;
+}
+
+.comment-input {
+  margin-left: 1rem;
+}
+
+.comment-reply {
+  padding:  3rem;
+  img {
+    width: 1.5rem;
+  }
+  button {
+    margin: 1rem 0;
+  }
+}
+
+.reply-task {
+  @include flexbox;
+  div:nth-of-type(2) {
+    @include flex(1);
+    margin-left: 1rem;
+  }
+}

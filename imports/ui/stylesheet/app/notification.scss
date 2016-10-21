@@ -1,0 +1,58 @@
+//
+.notification {
+	width: 15rem;
+	max-height: 18rem;
+	position: relative;
+	margin-top: 1.5rem;
+	padding: 0.8rem;
+	right: 40%;
+	background: $color-raw;
+	border: 1px solid rgba(23, 17, 20, 0.36);
+	box-shadow: 2px 2px 2px #888888;
+	overflow: auto;
+  z-index: 2;
+	span {
+		margin-left: 0.2rem;
+		font-size: 0.6rem;
+	}
+	p {
+		margin-left: 33px;
+		font-size: 0.8rem;
+		cursor: pointer;
+	}
+	.notification-row {
+		&:hover {
+			background-color: $color-tertiary;
+		}
+	}
+	@include below(600px) {
+		right: 30%;
+width: 13rem;
+
+}
+}
+
+.notification:after, .notification:before {
+	position: absolute;
+	bottom: 100%;
+	right: 40%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	pointer-events: none;
+	@include below(600px) {
+		right: 30%;
+	}
+}
+
+.notification:after {
+	border-bottom-color: $color-raw;
+	border-width: 8px;
+	margin-left: -8px;
+}
+.notification:before {
+	border-bottom-color: $color-raw;
+	border-width: 14px;
+	margin-left: -14px;
+}

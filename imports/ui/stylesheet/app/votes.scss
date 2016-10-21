@@ -1,0 +1,52 @@
+//  votes css style
+//  we use comment css file ,@BACAUSE have sama style
+//
+//   votes target css
+
+.votes {
+  margin: 3rem 0;
+  h3 {
+    font-size: 0.8rem;
+  }
+  button {
+    margin-top: 3px;
+    padding: 3px;
+    color: white;
+    &:hover {
+      background-color: $color-negative;
+      box-shadow: 1px 1px 2px $color-complementary;
+    }
+  }
+}
+
+#voteChart {
+  padding: 3rem;
+  a:nth-of-type(1) {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.2rem;
+  }
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  ul {
+    padding: 2rem;
+  }
+}
+
+#voteChart:target {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+  overflow: scroll;
+  z-index: 2;
+  transition: opacity 1s, visibility 1s;
+
+}
+#voteChart:not(:target) {
+  opacity:0;
+  visibility: hidden;
+  transition: opacity 1s, visibility 1s;
+}

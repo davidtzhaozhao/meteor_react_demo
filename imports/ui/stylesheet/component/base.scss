@@ -1,0 +1,102 @@
+
+* {
+  @include box-sizing(border-box);
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent; // for some Androids
+}
+
+html, button, input, textarea, select {
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// @IMPORTANT this is all app font-size settings
+html {
+  font-size: 16px;
+  @include above(800px) {
+        font-size: 18px;
+  }
+  @include above(1200px) {
+        font-size: 20px;
+    }
+}
+
+h1 {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.1rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+
+body {
+@extend  %type-regular;
+  color: $color-full;
+}
+
+// Default type layout
+h1, h2, h3, h4, h5, h6 {
+@extend  %type-regular;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+margin-bottom: 1.5em;
+font-size: 1rem;
+line-height: 1.4;
+}
+
+sub,
+sup {
+  font-size: .8rem;
+}
+
+sub {
+  bottom: -.2rem;
+}
+
+sup {
+  top: -.2rem;
+}
+
+b {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+br {
+    display: block;
+    margin: 1.2rem;
+    margin-bottom: -.8rem;
+    content: "";
+ }
+
+ a {
+   font-size: 0.8rem;
+   @include links(
+   $color-well,
+   $color-active ,
+   $color-medium-well,
+   $color-medium);
+ }
+
+ hr {
+   display:block;
+   clear:both;
+   width: 98%;
+   height: 1px;
+   border: 0;
+   background-color: $color-medium;
+ }

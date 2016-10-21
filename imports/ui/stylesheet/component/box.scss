@@ -1,0 +1,32 @@
+// login register password menu box define
+// box-body is container
+.box-body {
+  @include flexbox;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: $color_rare;
+
+  .box {
+    @include flexbox;
+    @include flex-direction(column);
+    @include box-shadow();
+    border: 1px solid $color-tertiary;
+    width: 40%;
+    height: 70%;
+    padding: 1rem;
+    margin: auto;
+    @include below(600px) {
+      width: 90%;
+      height: 90%;
+    }
+    input {
+      margin: 1.5rem 0;
+    }
+    form {
+      @include flex(1);
+    }
+  }
+}

@@ -1,0 +1,89 @@
+// newsvoo log css
+.svg-logo {
+/*  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);*/
+/*  background: #ddd;*/
+  display: inline;
+  width: 6rem;
+  margin-left: 0.8rem;
+  border: 1px solid #006633;
+  @include border-radius(50%);
+}
+// end of svg log css
+
+// errors scss
+// clean both in parents and in alert
+.errors{
+  position: fixed;
+  top: 6rem;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 10000;
+  padding: 0.6rem;
+  pointer-events: none;
+  @extend %clearfix;
+  .alert {
+  float: right;
+  clear: both;
+  width: 10rem;
+  margin-bottom: 0.3rem;
+  pointer-events: auto;
+  color:$color-empty;
+  &:empty {display: none};
+  @include box-shadow(3px 1px 5px $color-medium-well);
+  &[title='danger'] {
+    background-color: $color-negative;
+  };
+  &[title='success'] {
+    background-color: $color-active;
+  }
+}
+}
+// end of error css
+
+// layout header
+// use flex box
+#website-header {
+  .row{
+  @include flexbox;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem .5rem;
+}
+.brand {
+  flex: 1;
+}
+.action {
+  flex: 0 1 auto;
+  margin-right: 2rem;
+  font-size: 1rem;
+  .dropdown-menu {
+    @include above(600px) {
+      &:after {
+        position: absolute;
+        top: -16px;
+        right: 24%;
+        display: inline-block;
+        border-right: 11px solid transparent;
+        border-bottom: 11px solid #7ed1e3;
+        border-left: 11px solid transparent;
+        content:'';
+    }
+    &:before {
+        position: absolute;
+        top: -17px;
+        right: 25%;
+        display: inline-block;
+        border-right: 12px solid transparent;
+        border-bottom: 12px solid #ccc;
+        border-left: 12px solid transparent;
+        border-bottom-color: rgba(0, 0, 0, 0.2);
+        content:'';
+    }
+    }
+  }
+}
+}
+
+// end of layout header css

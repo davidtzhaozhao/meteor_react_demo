@@ -1,0 +1,25 @@
+// search scss
+  input{
+    .search & {
+    @include box-sizing(border-box);
+    display: block;
+    outline: none;
+    width: 100%;
+    height: 3rem;
+    margin-top: 100px;
+    margin-bottom: 2rem;
+    padding: .5rem;
+    border: none;
+    border-bottom: 1px solid gray;
+    background: transparent;
+    font: 1rem;
+    @include placeholder{
+      font-size: 1rem;
+      color:$color-ancillary;
+    };
+  }
+}
+
+textarea {
+  resize: none;
+}

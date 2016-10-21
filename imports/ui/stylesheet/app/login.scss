@@ -1,0 +1,12 @@
+// remove botton fix
+.fix-postion {
+  font-size: 2rem;
+  @include top-position(2rem,0deg);
+}
+
+.login p{
+  // margin-top: -1.5rem;
+  // background-color: red;
+  // text-align: left;
+  // line-height: 1.5rem;
+}
